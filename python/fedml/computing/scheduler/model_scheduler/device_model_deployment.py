@@ -632,6 +632,7 @@ def is_client_inference_container_ready(infer_url_host, inference_http_port, inf
     logging.info(f"The inference type is {inference_type}")
 
     if inference_type == "default":
+        infer_url_host = "0.0.0.0"
         default_client_container_ready_url = "http://{}:{}/ready".format(infer_url_host, inference_http_port)
         response = None
         try:
